@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+
 /* Type selector */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     background-color: #f4f1de;
     color: #264653;
     margin: 0;
     padding: 0;
+    h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
 }
 
 /* Type selector */
@@ -101,4 +109,46 @@ img {
     padding: 20px;
     margin-top: 30px;
     border-top: 5px solid #f4a261;
+}
+#main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #main-content {
+        padding: 24px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 320px) {
+
+    #main-content {
+        padding: 16px;
+    }
+
+    .page-header {
+        padding: 24px 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
 }
