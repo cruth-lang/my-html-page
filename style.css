@@ -1,51 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
 
-/* Type selector */
+/* Universal box sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Main page styling */
 body {
     font-family: 'Open Sans', Arial, sans-serif;
     background-color: #f4f1de;
     color: #264653;
     margin: 0;
     padding: 0;
-    h1,
-h2,
-h3 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-}
-
-/* Type selector */
-p {
     line-height: 1.6;
 }
 
-/* Type selector */
-h2 {
-    color: #264653;
-    margin-bottom: 15px;
+/* Heading styling */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Class selector + Box Model */
+/* Header */
 .page-header {
     background-color: #264653;
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 35px 20px;
     margin: 20px;
     border: 5px solid #f4a261;
+    border-radius: 10px;
 }
 
-/* Class selector + Box Model */
+.page-header h1 {
+    font-size: 32px;
+}
+
+/* Navigation using Flexbox */
 .navigation {
     background-color: #f4a261;
     padding: 20px;
     margin: 20px;
     border: 3px solid #264653;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .navigation h2 {
     color: #264653;
+    margin: 0;
+}
+
+.navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navigation a {
@@ -58,50 +73,78 @@ h2 {
     text-decoration: underline;
 }
 
-/* ID selector + Box Model */
+/* Main content */
+#main-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+/* About section */
 #about {
     background-color: white;
     padding: 25px;
-    margin: 20px;
+    margin-bottom: 25px;
     border: 3px solid #264653;
+    border-radius: 10px;
 }
 
-/* Class selector + Box Model */
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Main CSS Grid layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Content sections */
 .content-section {
     background-color: white;
     padding: 25px;
-    margin: 20px;
     border: 3px solid #f4a261;
+    border-radius: 10px;
+    min-width: 0;
 }
 
-/* Class selector */
+/* Education cards */
 .education-card {
     background-color: #f4f1de;
-    padding: 20px;
+    padding: 18px;
     margin: 15px 0;
     border: 2px solid #264653;
+    border-radius: 8px;
 }
 
-/* ID selector */
+/* Interests section */
 #interests {
     border-left: 8px solid #f4a261;
 }
 
-/* ID selector */
+/* Goals section */
 #goals {
     border-left: 8px solid #264653;
 }
 
-/* Styling the image */
+/* Image styling */
 img {
     display: block;
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
     height: auto;
-    margin: 20px auto;
+    margin: 15px auto;
     border: 4px solid #f4a261;
+    border-radius: 8px;
 }
 
-/* Class selector */
+/* Footer */
 .page-footer {
     background-color: #264653;
     color: white;
@@ -110,45 +153,70 @@ img {
     margin-top: 30px;
     border-top: 5px solid #f4a261;
 }
-#main-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 32px;
-}
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-/* Tablet responsiveness */
-@media (max-width: 768px) {
 
-    .project-grid {
+/* Tablet responsiveness: 768px */
+@media screen and (max-width: 768px) {
+
+    .content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #main-content {
+        padding: 20px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation ul {
+        gap: 15px;
+    }
+}
+
+/* Mobile responsiveness: 480px and below */
+@media screen and (max-width: 480px) {
+
+    .content-grid {
         grid-template-columns: 1fr;
     }
 
     #main-content {
-        padding: 24px;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 16px;
-    }
-}
-
-/* Mobile responsiveness */
-@media (max-width: 320px) {
-
-    #main-content {
-        padding: 16px;
+        padding: 12px;
     }
 
     .page-header {
-        padding: 24px 16px;
+        padding: 20px 12px;
+        margin: 10px;
     }
 
-    h1 {
-        font-size: 28px;
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .navigation {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content-section,
+    #about {
+        padding: 15px;
+    }
+
+    body {
+        font-size: 14px;
     }
 }
+
+
