@@ -67,15 +67,42 @@ The fields have visible labels and required-field validation. The form uses a ma
 
 Accessibility testing should be completed using the WAVE Web Accessibility Evaluation Tool.
 
+### Home Page Results 
+- Errors: 0
+- Contrast Errors: 0 
+- Alerts: 0 
+- Features: 4
+- Structure: 16 
+- ARIA: 2
+- AIM Score: 10 out of 10
+
+  ### Projects Page Results 
+  - Errors: 0
+  - Contrast Errors: 0
+  - Alerts: 0
+  - Features: 3
+  - Structure: 19
+  - ARIA: 5 
+  - AIM Score: 10 out of 10
+
+  ### About Page Results
+  - Errors: 0
+  - Contrast Errors: 0
+  - Alerts: 0
+  - Features: 7
+  - Structures: 10
+  - ARIA: 6
+  - AIM Score 10 out of 10 
+  
 Testing checklist:
 
-- [ ] Test the Home page with WAVE.
-- [ ] Test the Projects page with WAVE.
-- [ ] Test the About Me page with WAVE.
-- [ ] Review and address any accessibility errors.
-- [ ] Review contrast and heading structure.
-- [ ] Test navigation using a keyboard.
-- [ ] Test the website on a mobile-sized screen.
+- [x] Test the Home page with WAVE.
+- [x] Test the Projects page with WAVE.
+- [x] Test the About Me page with WAVE.
+- [x] Review and address any accessibility errors.
+- [x] Review contrast and heading structure.
+- [x] Test navigation using a keyboard.
+- [x] Test the website on a mobile-sized screen.
 
 Record the actual WAVE results after testing each page.
 
