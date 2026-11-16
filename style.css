@@ -1,222 +1,344 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+/* ==============================
+ 1. COLOR PALETTE AND VARIABLES
+================================= */
 
-/* Universal box sizing */
+:root {
+    --teal: #264653;
+    --cream: #f4f1de;
+    --orange: #f4a261;
+    --white: #ffffff;
+    --dark-text: #24343b;
+    --error: #b42318;
+}
+
+/* ==============================
+   2. GENERAL PAGE STYLING
+================================= */
+
 * {
     box-sizing: border-box;
 }
 
-/* Main page styling */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
-    background-color: #f4f1de;
-    color: #264653;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    font-family: "Open Sans", Arial, sans-serif;
+    background-color: var(--cream);
+    color: var(--dark-text);
+    line-height: 1.7;
+    font-size: 16px;
 }
 
-/* Heading styling */
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3 {
+    font-family: "Montserrat", Arial, sans-serif;
+    color: var(--teal);
+    line-height: 1.3;
 }
 
-/* Header */
-.page-header {
-    background-color: #264653;
-    color: white;
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ==============================
+   3. ACCESSIBILITY
+================================= */
+
+a {
+    color: var(--teal);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #17333e;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background-color: var(--white);
+    color: var(--teal);
+    padding: 12px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+/* ==============================
+   4. HEADER AND NAVIGATION
+================================= */
+
+.site-header {
+    background-color: var(--teal);
+    color: var(--white);
     text-align: center;
     padding: 35px 20px;
-    margin: 20px;
-    border: 5px solid #f4a261;
-    border-radius: 10px;
 }
 
-.page-header h1 {
-    font-size: 32px;
+.site-header h1 {
+    color: var(--white);
+    margin-bottom: 10px;
 }
 
-/* Navigation using Flexbox */
-.navigation {
-    background-color: #f4a261;
-    padding: 20px;
-    margin: 20px;
-    border: 3px solid #264653;
-    border-radius: 10px;
+.site-header p {
+    color: var(--white);
+}
+
+.site-header nav ul {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
-}
-
-.navigation h2 {
-    color: #264653;
-    margin: 0;
-}
-
-.navigation ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 25px 0 0;
 }
 
-.navigation a {
-    color: #264653;
+.site-header nav a {
+    display: inline-block;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 6px;
 }
 
-.navigation a:hover {
-    text-decoration: underline;
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+    background-color: var(--orange);
+    color: #24343b;
 }
 
-/* Main content */
-#main-content {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 25px;
+/* ==============================
+   5. MAIN CONTENT
+================================= */
+
+main {
+    max-width: 1100px;
+    width: 90%;
+    margin: 35px auto;
 }
 
-/* About section */
-#about {
-    background-color: white;
+.content-section {
+    background-color: var(--white);
     padding: 25px;
     margin-bottom: 25px;
-    border: 3px solid #264653;
     border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-.about-layout {
+.content-section h2 {
+    border-bottom: 3px solid var(--orange);
+    padding-bottom: 10px;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+/* ==============================
+   6. HOME PAGE LAYOUT
+================================= */
+
+.intro-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 25px;
 }
 
-/* Main CSS Grid layout */
-.content-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-    align-items: stretch;
-}
-
-/* Content sections */
-.content-section {
-    background-color: white;
-    padding: 25px;
-    border: 3px solid #f4a261;
-    border-radius: 10px;
-    min-width: 0;
-}
-
-/* Education cards */
-.education-card {
-    background-color: #f4f1de;
-    padding: 18px;
-    margin: 15px 0;
-    border: 2px solid #264653;
-    border-radius: 8px;
-}
-
-/* Interests section */
-#interests {
-    border-left: 8px solid #f4a261;
-}
-
-/* Goals section */
-#goals {
-    border-left: 8px solid #264653;
-}
-
-/* Image styling */
-img {
-    display: block;
+.intro-section img {
     width: 100%;
-    max-width: 500px;
-    height: auto;
-    margin: 15px auto;
-    border: 4px solid #f4a261;
+    object-fit: cover;
+}
+
+/* ==============================
+   7. PROJECT CARDS
+================================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background-color: var(--cream);
+    border-left: 5px solid var(--orange);
+    padding: 20px;
     border-radius: 8px;
 }
 
-/* Footer */
-.page-footer {
-    background-color: #264653;
-    color: white;
+.project-card h3 {
+    margin-top: 0;
+}
+
+/* ==============================
+   8. CONTACT FORM
+================================= */
+
+form {
+    margin-top: 20px;
+}
+
+fieldset {
+    border: 2px solid var(--teal);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--teal);
+    padding: 0 8px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #68777d;
+    border-radius: 6px;
+    font: inherit;
+    background-color: var(--white);
+    color: var(--dark-text);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.error-message {
+    display: block;
+    color: var(--error);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+button {
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 22px;
+    margin-top: 18px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #17333e;
+}
+
+/* ==============================
+   9. FOOTER
+================================= */
+
+.site-footer {
+    background-color: var(--teal);
+    color: var(--white);
     text-align: center;
     padding: 20px;
-    margin-top: 30px;
-    border-top: 5px solid #f4a261;
+    margin-top: 40px;
 }
 
-/* Tablet responsiveness: 768px */
-@media screen and (max-width: 768px) {
+.site-footer p {
+    margin: 0;
+}
 
-    .content-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+/* ==============================
+   10. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 2rem;
     }
 
-    #main-content {
-        padding: 20px;
+    h2 {
+        font-size: 1.5rem;
     }
 
-    .about-layout {
+    .intro-section,
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
-    .navigation {
+    .site-header nav ul {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
-    .navigation ul {
-        gap: 15px;
+    .site-header nav a {
+        width: 180px;
+    }
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .content-section {
+        padding: 18px;
     }
 }
 
-/* Mobile responsiveness: 480px and below */
-@media screen and (max-width: 480px) {
+/* ==============================
+   11. REDUCED MOTION
+================================= */
 
-    .content-grid {
-        grid-template-columns: 1fr;
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    #main-content {
-        padding: 12px;
-    }
-
-    .page-header {
-        padding: 20px 12px;
-        margin: 10px;
-    }
-
-    .page-header h1 {
-        font-size: 24px;
-    }
-
-    .navigation {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    .navigation ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .content-section,
-    #about {
-        padding: 15px;
-    }
-
-    body {
-        font-size: 14px;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 }
-
-

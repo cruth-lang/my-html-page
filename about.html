@@ -3,88 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About & Contact | Crystal Ruth</title>
+    <meta name="description" content="Learn more about my background, education, experience, and career goals.">
+    <title>About Me | My Personal Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header>
+    <header class="site-header">
         <h1>About Me</h1>
+        <p>Learn more about my background and goals.</p>
 
-        <nav>
-    <h2>Navigation</h2>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects/Work</a></li>
-        <li><a href="about.html">About/Contact</a></li>
-    </ul>
-</nav>
-
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html" aria-current="page">About Me</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main id="main-content">
-
-        <section>
+        <section class="content-section">
             <h2>About Me</h2>
             <p>
-                I am a college student studying Information Technology.
-                I am building my skills in web development and technology
-                while working toward a career in cybersecurity and software.
+                Welcome to my About Me page! I am interested in technology,
+                creativity, and learning new skills. I enjoy exploring ways
+                that technology can be used to solve problems and bring ideas
+                to life.
             </p>
         </section>
 
-        <section>
-            <h2>Education & Experience</h2>
+        <section class="content-section">
+            <h2>Education and Experience</h2>
             <p>
-                I graduated from The Conservatory of Recording Arts and
-                Sciences in Gilbert, Arizona in 2024. I also completed
-                a 260-hour internship with Icon Recording Studios in
-                Baton Rouge, Louisiana.
+                My education and experiences have helped me develop
+                communication, teamwork, and problem-solving skills.
+                I am continuing to build my knowledge and gain experience
+                that will support my future career.
             </p>
         </section>
 
-        <section>
+        <section class="content-section">
             <h2>Career Goals</h2>
             <p>
-                My goal is to continue developing my information technology
-                and cybersecurity skills and build a successful career
-                in the technology field.
+                My goal is to continue learning about technology and
+                developing skills that I can use in a professional setting.
+                I want to keep improving, take on new challenges, and use
+                what I learn to create meaningful work.
             </p>
         </section>
 
-        <section>
-            <h2>Contact</h2>
-        </p>
-            <label for="email">Email:cruth@my.campus.edu</label>
-        <form action="mailto:cruth@my.campus.edu" method="post" enctype="text/plain">
-    
-            <fieldset>
-        <legend>Contact Form</legend>
+        <section class="content-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
+            <p>
+                If you would like to get in touch, you can use the contact
+                information below.
+            </p>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <br><br>
+            <p>
+                Email:
+                <a href="mailto:cruth@my.campus.edu">cruth@my.campus.edu</a>
+            </p>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br><br>
+            <form action="mailto:cruth@my.campus.edu"
+                  method="post"
+                  enctype="text/plain">
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <br><br>
+                <fieldset>
+                    <legend>Send me a message</legend>
 
-        <input type="submit" value="Send">
+                    <p id="form-instructions">
+                        Fields marked required must be completed.
+                    </p>
 
-    </fieldset>
-</form>
+                    <label for="name">Your name (required)</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                        aria-describedby="name-error">
 
+                    <span class="error-message" id="name-error">
+                        Please enter your name.
+                    </span>
+
+                    <label for="email">Your email address (required)</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                        aria-describedby="email-error">
+
+                    <span class="error-message" id="email-error">
+                        Please enter a valid email address.
+                    </span>
+
+                    <label for="message">Your message (required)</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        required
+                        aria-describedby="message-error"></textarea>
+
+                    <span class="error-message" id="message-error">
+                        Please enter a message.
+                    </span>
+
+                    <button type="submit">Send Message</button>
+                </fieldset>
+            </form>
+
+            <p>
+                Note: This form uses your device's default email application.
+                If it does not open, you can email me directly using the
+                address above.
+            </p>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Crystal Ruth</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 My Personal Website. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
-
